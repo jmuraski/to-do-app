@@ -1,19 +1,29 @@
 package com.jmuraski.toDoApp.ToDoList;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table
 public class ToDoList {
+    @Id
+    @SequenceGenerator(
+            name = "todolist_sequence",
+            sequenceName = "todolist_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "todolist_sequence"
+    )
     private Long id;
     private String name;
-    private List<String> list;
 
     public ToDoList() {
     }
 
-    public ToDoList(Long id, String name, List<String> list) {
-        this.id = id;
+    public ToDoList(String name) {
         this.name = name;
-        this.list = list;
     }
 
     public Long getId() {
@@ -32,20 +42,11 @@ public class ToDoList {
         this.name = name;
     }
 
-    public List<String> getList() {
-        return list;
-    }
-
-    public void setList(List<String> list) {
-        this.list = list;
-    }
-
     @Override
     public String toString() {
         return "ToDoList{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", list=" + list +
                 '}';
     }
 }

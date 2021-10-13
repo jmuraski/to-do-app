@@ -26,10 +26,11 @@ public class ToDoListController {
         return toDoListService.getToDoListByID(id);
     }
 
-//    @PostMapping
-//    public ToDoList addToDoList() {
-//        return toDoListService.addToDoList();
-//    }
+    @PostMapping
+    public void addToDoList(@RequestBody ToDoList toDoList) {
+        toDoListService.addToDoList(toDoList);
+    }
+
 //
 //    @PutMapping(path = "/{id}")
 //    public ToDoList updateToDoList(@PathVariable Long id) {

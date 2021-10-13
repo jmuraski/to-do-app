@@ -1,33 +1,28 @@
 package com.jmuraski.toDoApp.ToDoList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class ToDoListService {
+    private final ToDoListRepository toDoListRepository;
+
+    @Autowired
+    public ToDoListService(ToDoListRepository toDoListRepository) {
+        this.toDoListRepository = toDoListRepository;
+    }
 
     public List<ToDoList> getToDoLists() {
-        return List.of(
-                new ToDoList(
-                        1L,
-                        "Monday List",
-                        List.of("Eat breakfast", "Go for a run")
-                ),
-                new ToDoList(
-                        2L,
-                        "Tuesday List",
-                        List.of("Eat breakfast", "Go for a walk")
-                )
-        );
+        return toDoListRepository.findAll();
     }
 
     public ToDoList getToDoListByID(long id) {
-        ToDoList toDoList = new ToDoList(
-                id,
-                "Monday List",
-                List.of("Eat breakfast", "Go for a run")
-        );
-        return toDoList;
+        return toDoListRepository.getById(id);
+    }
+
+    public void addToDoList(ToDoList toDoList) {
+        System.out.println(toDoList);
     }
 }
