@@ -18,7 +18,7 @@ public class ToDoListService {
         return toDoListRepository.findAll();
     }
 
-    public ToDoList getToDoListByID(long id) {
+    public ToDoList getToDoListByID(Long id) {
         return toDoListRepository.getById(id);
     }
 

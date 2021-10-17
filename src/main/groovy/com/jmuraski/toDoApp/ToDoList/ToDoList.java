@@ -1,10 +1,14 @@
 package com.jmuraski.toDoApp.ToDoList;
 
+import com.jmuraski.toDoApp.ToDoItem.ToDoItem;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Entity
-@Table
+@Table(name = "to_do_list")
 public class ToDoList {
     @Id
     @SequenceGenerator(
@@ -16,6 +20,7 @@ public class ToDoList {
             strategy = GenerationType.SEQUENCE,
             generator = "todolist_sequence"
     )
+    @Column(name = "to_do_list_id")
     private Long id;
     private String name;
 
