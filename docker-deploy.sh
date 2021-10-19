@@ -24,7 +24,7 @@ docker-compose -f $COMPOSE_FILE build $APP_NAME
 
 if [ "$1" == "restart" ]
 then
-  echo "Stoping $APP_NAME"
+  echo "Stopping $APP_NAME"
   docker-compose -f $COMPOSE_FILE kill $APP_NAME
   echo "Removing $APP_NAME"
   docker-compose -f $COMPOSE_FILE rm -f $APP_NAME
