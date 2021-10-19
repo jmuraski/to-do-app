@@ -1,0 +1,40 @@
+version: "3.7"
+services:
+  todo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: todo
+    ports:
+      - "9000:8080"
+    volumes:
+      - ../logs:/apps/docker/logs
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:12
+    restart: always
+    volumes:
+      - ./docker/postgres/db-init:/docker-entrypoint/initdb.d/
+      - ./docker/postgres/data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=pguser
+      - POSTGRES_PASSWORD=pgpass
+      - POSTGRES_DB=todo
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./docker/prometheus/config:/etc/prometheus/
+      - ./docker/prometheus/data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+networks:
+  default:
+    name: todo
