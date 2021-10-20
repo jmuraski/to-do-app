@@ -1,6 +1,7 @@
-package com.jmuraski.toDoApp.ToDoItem;
+package com.jmuraski.toDoApp.Service;
 
-import com.jmuraski.toDoApp.ToDoList.ToDoList;
+import com.jmuraski.toDoApp.Model.ToDoItem;
+import com.jmuraski.toDoApp.Repository.ToDoItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

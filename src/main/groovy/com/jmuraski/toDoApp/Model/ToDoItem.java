@@ -1,6 +1,4 @@
-package com.jmuraski.toDoApp.ToDoItem;
-
-import com.jmuraski.toDoApp.ToDoList.ToDoList;
+package com.jmuraski.toDoApp.Model;
 
 import javax.persistence.*;
 

@@ -1,11 +1,6 @@
-package com.jmuraski.toDoApp.ToDoList;
-
-import com.jmuraski.toDoApp.ToDoItem.ToDoItem;
+package com.jmuraski.toDoApp.Model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "to_do_list")

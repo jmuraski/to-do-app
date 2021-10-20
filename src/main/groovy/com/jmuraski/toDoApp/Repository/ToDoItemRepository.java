@@ -1,5 +1,6 @@
-package com.jmuraski.toDoApp.ToDoItem;
+package com.jmuraski.toDoApp.Repository;
 
+import com.jmuraski.toDoApp.Model.ToDoItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

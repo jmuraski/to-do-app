@@ -1,9 +1,10 @@
-package com.jmuraski.toDoApp.ToDoList;
+package com.jmuraski.toDoApp.Controller;
 
+import com.jmuraski.toDoApp.Model.ToDoList;
+import com.jmuraski.toDoApp.Service.ToDoListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
