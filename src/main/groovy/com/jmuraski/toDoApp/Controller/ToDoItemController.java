@@ -1,5 +1,7 @@
-package com.jmuraski.toDoApp.ToDoItem;
+package com.jmuraski.toDoApp.Controller;
 
+import com.jmuraski.toDoApp.Model.ToDoItem;
+import com.jmuraski.toDoApp.Service.ToDoItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

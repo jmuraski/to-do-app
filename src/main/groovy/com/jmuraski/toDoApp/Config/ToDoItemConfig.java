@@ -1,12 +1,13 @@
 //package com.jmuraski.toDoApp.ToDoItem;
 //
-//import com.jmuraski.toDoApp.ToDoList.ToDoList;
-//import com.jmuraski.toDoApp.ToDoList.ToDoListRepository;
+//import com.jmuraski.toDoApp.Model.ToDoList;
+//import com.jmuraski.toDoApp.Repository.ToDoListRepository;
 //import org.springframework.boot.CommandLineRunner;
 //import org.springframework.context.annotation.Bean;
 //
 //import java.util.List;
 //
+//@Configuration
 //public class ToDoItemConfig {
 //    @Bean
 //    CommandLineRunner commandLineRunner(ToDoItemRepository toDoItemRepository) {
