@@ -23,6 +23,6 @@ public class ToDoListService {
     }
 
     public void addToDoList(ToDoList toDoList) {
-        System.out.println(toDoList);
+        toDoListRepository.save(toDoList);
     }
 }
