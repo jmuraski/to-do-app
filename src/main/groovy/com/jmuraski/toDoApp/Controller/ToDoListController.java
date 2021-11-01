@@ -32,14 +32,14 @@ public class ToDoListController {
         toDoListService.addToDoList(toDoList);
     }
 
-//
-//    @PutMapping(path = "/{id}")
-//    public ToDoList updateToDoList(@PathVariable Long id) {
-//        return toDoListService.updateToDoList(id);
-//    }
-//
-//    @DeleteMapping(path = "/{id}")
-//    public ToDoList removeToDoList(@PathVariable Long id) {
-//        return toDoListService.removeToDoList(id);
-//    }
+
+    @PutMapping(path = "/{id}")
+    public void updateToDoList(@PathVariable Long id, @RequestBody ToDoList toDoList) {
+        toDoListService.updateToDoList(id, toDoList);
+    }
+
+    @DeleteMapping(path = "/{id}")
+    public void removeToDoList(@PathVariable Long id) {
+        toDoListService.removeToDoList(id);
+    }
 }

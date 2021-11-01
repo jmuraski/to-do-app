@@ -27,13 +27,13 @@ public class ToDoItemController {
         toDoItemService.addToDoItem(listId, toDoItem);
     }
 
-//    @PutMapping(path = "/{id}")
-//    public ToDoItem updateToDoItem(@PathVariable Long id) {
-//        return ToDoItemService.updateToDoItem(id);
-//    }
-//
-//    @DeleteMapping(path = "/{id}")
-//    public void deleteToDoItem(@PathVariable Long id) {
-//        ToDoItemService.removeToDoItem(id);
-//    }
+    @PutMapping(path = "/{id}")
+    public void updateToDoItem(@PathVariable Long id, @RequestBody ToDoItem toDoItem) {
+        toDoItemService.updateToDoItem(id, toDoItem);
+    }
+
+    @DeleteMapping(path = "/{id}")
+    public void removeToDoItem(@PathVariable Long id) {
+        toDoItemService.removeToDoItem(id);
+    }
 }

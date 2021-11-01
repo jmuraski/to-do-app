@@ -27,4 +27,14 @@ public class ToDoListService {
     public void addToDoList(ToDoList toDoList) {
         toDoListRepository.save(toDoList);
     }
+
+    public void updateToDoList(Long id, ToDoList toDoList) {
+        ToDoList editedToDoList = toDoListRepository.getById(id);
+        editedToDoList.setName(toDoList.getName());
+        toDoListRepository.save(editedToDoList);
+    }
+
+    public void removeToDoList(Long id) {
+        toDoListRepository.deleteById(id);
+    }
 }
